@@ -30,8 +30,7 @@ public class Map extends Panel {
 	
 	int[] playerpos = new int[]{2, 2};
 	int[] waterpos = new int[LINES];
-        int[] waterpos2 = new int[COLUMNS];
-        int[] waterpos3 = new int [COLUMNS];
+        int[] lago = new int[COLUMNS];
         int [] bridge_pos = new int [2];
         RGB bridge_color = new TextColor.RGB(155,92,52);
 	Tree[] treespos = new Tree[TREECOUNT];
@@ -117,8 +116,7 @@ public class Map extends Panel {
 							graphics.putString(i, waterpos2[i]-2, String.valueOf(SymbolsMirk.WATER[0]));
 						}*/
                                                 //gera o lago
-                                                //lago = new int []{waterpos[15],};
-                                                graphics.putString(waterpos3[15], 5, String.valueOf(SymbolsMirk.WATER[2]));
+                                                graphics.putString( 15, lago[5], String.valueOf(SymbolsMirk.WATER[2]));
 						
 						/*
 						 * Draw characters
@@ -147,10 +145,9 @@ public class Map extends Panel {
 		for (int i = 0; i < LINES; i++) {
 			waterpos[i] = col + (mRand.nextInt(2) - 1);
 		}
-                //Segundo rio
-                int lin = mRand.nextInt(LINES);
-		for (int i = 0; i < COLUMNS; i++) {
-			waterpos2[i] = lin + (mRand.nextInt(2) + 1);
+                //Gera o lago
+		for (int i = 0; i < LINES; i++) {
+			lago[i] = 5;
 		}
                 
                 
