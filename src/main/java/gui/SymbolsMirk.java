@@ -1,10 +1,10 @@
 package gui;
 
 public class SymbolsMirk {
-	public static final char[] WATER = { '?', '?', '?' };
-	public static final char[] SMALLTREES = new char[] { '±', 'ö', 'Œ', '›', '¨' };
-	public static final char[] TREES = new char[] { '•', 'Œ', '›' };
-	public static final char HERO = '?';
-	public static final char FOE = '?';
-        // pontifez
+	public static final char[] WATER = { '‚ñë', '‚ñí', '‚ñì' };
+	public static final char[] SMALLTREES = new char[] { '¬±', '≈°', '√é', '√ù', '¬¨' };
+	public static final char[] TREES = new char[] { '¬•', '√é', '√ù' };
+	public static final char HERO = 'œÜ';
+	public static final char FOE = 'Œò';
+        public static final char GOLD = '$';
 }

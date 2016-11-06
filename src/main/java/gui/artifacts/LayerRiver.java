@@ -18,7 +18,7 @@ import gui.SymbolsMirk;
  */
 public class LayerRiver extends MapLayer {
 
-    int[] waterpos = new int[LINES];
+   
     TextColor.RGB waterColor = new TextColor.RGB(30, 150, 200);
 
     public LayerRiver() {

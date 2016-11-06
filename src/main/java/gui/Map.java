@@ -14,6 +14,8 @@ import com.googlecode.lanterna.gui2.EmptySpace;
 import com.googlecode.lanterna.gui2.Panel;
 import com.googlecode.lanterna.gui2.TextGUIGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
+import gui.artifacts.LayerFoes;
+import gui.artifacts.LayerGold;
 import gui.artifacts.LayerRiver;
 import gui.artifacts.MapLayer;
 import gui.artifacts.MapObject;
@@ -53,7 +55,8 @@ public class Map extends Panel {
                 */
                 _layers = new ArrayList<MapLayer>();
                 _layers.add(new LayerRiver());
-
+                _layers.add(new LayerFoes());
+                _layers.add(new LayerGold());
 		_chars = chars;
 		getBasePane();
 		

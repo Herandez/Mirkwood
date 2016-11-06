@@ -7,7 +7,7 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.TextColor.RGB;
 import gui.SymbolsMirk;
 
-public class Tree {
+public class Tree{
 	private char mTree;
 	TerminalPosition mPosition;
 	RGB color; 

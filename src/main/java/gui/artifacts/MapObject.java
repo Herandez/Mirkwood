@@ -13,12 +13,12 @@ import com.googlecode.lanterna.TextColor;
  * @author davidsanguinetti
  */
 public abstract class MapObject {
-    TerminalPosition position;
-    boolean free;
-    boolean visible;
-    char symbol;
-    TextColor foregroundColor;
-    TextColor backgroundColor;
+   protected TerminalPosition position;
+   protected boolean free;
+   protected boolean visible;
+   protected char symbol;
+   protected TextColor foregroundColor;
+   protected TextColor backgroundColor;
 
     public MapObject(TerminalPosition position, boolean free, boolean visible, char symbol, TextColor foregroundColor, TextColor backgroundColor) {
         this.position = position;
