@@ -17,6 +17,7 @@ import com.googlecode.lanterna.input.KeyStroke;
 import gui.artifacts.LayerFoes;
 import gui.artifacts.LayerGold;
 import gui.artifacts.LayerRiver;
+import gui.artifacts.LayerTree;
 import gui.artifacts.MapLayer;
 import gui.artifacts.MapObject;
 import java.util.ArrayList;
@@ -54,17 +55,15 @@ public class Map extends Panel {
                 Create the respective layers
                 */
                 _layers = new ArrayList<MapLayer>();
+                _layers.add(new LayerTree());
                 _layers.add(new LayerRiver());
                 _layers.add(new LayerFoes());
                 _layers.add(new LayerGold());
+                
 		_chars = chars;
 		getBasePane();
 		
-//		mRand = new Random();
 		
-//		generateWater();
-		generateTrees();
-
 		land = new EmptySpace(new TextColor.RGB(165, 127, 61)) {
 			protected ComponentRenderer<EmptySpace> createDefaultRenderer() {
 				return new ComponentRenderer<EmptySpace>() {
@@ -83,6 +82,7 @@ public class Map extends Panel {
 						/*
 						 * Creates the trees and branches
 						 */
+                                                /*
 						for (Tree t : treespos) {
 							graphics.setForegroundColor(t.getColor());
 							graphics.putString(t.getmPosition().getColumn(), t.getmPosition().getRow(), String.valueOf(t.getmTree()));
@@ -91,7 +91,7 @@ public class Map extends Panel {
 							graphics.setForegroundColor(t.getColor());
 							graphics.putString(t.getmPosition().getColumn(), t.getmPosition().getRow(), String.valueOf(t.getmTree()));
 						}
-						
+						*/
 						/*
 						 * Creates the objects of layers
 						 */
@@ -132,7 +132,7 @@ public class Map extends Panel {
 		addComponent(land);
 
 	}
-	
+	/*
 	public void generateTrees() {
 		for (int i=0; i < TREECOUNT; i++)
 			treespos[i] = Tree.factoryRandomTree(COLUMNS, LINES);
@@ -140,7 +140,7 @@ public class Map extends Panel {
 		for (int i=0; i < BRANCHESCOUNT; i++)
 			branchespos[i] = Tree.factoryRandomBranch(COLUMNS, LINES);
 	}
-
+*/
 	public void refreshLand() {
 		land.invalidate();
 	}

@@ -5,9 +5,11 @@ import java.util.Random;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.TextColor.RGB;
+import static gui.Map.COLUMNS;
+import static gui.Map.LINES;
 import gui.SymbolsMirk;
 
-public class Tree{
+public class Tree extends MapObject{
 	private char mTree;
 	TerminalPosition mPosition;
 	RGB color; 
@@ -18,18 +20,24 @@ public class Tree{
 	private static RGB[] treeColors = {treeColor1, treeColor2, treeColor3};
 	RGB rubColor1 = new TextColor.RGB(165, 170, 60);
 	
-	Random mRand;
+        Random mRand = new Random();
 	
-	
-	public Tree(char mTree, TerminalPosition mPosition, RGB color) {
-		super();
+	public Tree() {
+		super(null, true, true);
 		this.mTree = mTree;
 		this.mPosition = mPosition;
 		this.color = color;
+             
+             
+             setSymbol(SymbolsMirk.TREES[mRand.nextInt(SymbolsMirk.TREES.length)]);
+             TerminalPosition tpos = new TerminalPosition(mRand.nextInt(COLUMNS),mRand.nextInt(LINES));
+             setPosition(tpos);
+             
+             setBackgroundColor(new TextColor.RGB(165, 127, 61));
+             setForegroundColor(treeColors[mRand.nextInt(treeColors.length)]);
+                
 	}
-
-
-
+        /*
 	public static Tree factoryRandomTree(int maxCol, int maxLine){
 		Random mRand = new Random();
 		
@@ -48,7 +56,7 @@ public class Tree{
 		
 	}
 
-
+*/
 
 	public char getmTree() {
 		return mTree;

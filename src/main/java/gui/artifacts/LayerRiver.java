@@ -20,17 +20,19 @@ public class LayerRiver extends MapLayer {
 
    
     TextColor.RGB waterColor = new TextColor.RGB(30, 150, 200);
-
+    int col = _Rand.nextInt(COLUMNS);
+    
     public LayerRiver() {
         generateRiver();
+       
     }
 
     public void generateRiver() {
-        int col = _Rand.nextInt(COLUMNS);
+        //int col = _Rand.nextInt(COLUMNS);
         for (int i = 0; i < LINES; i++) {
             TerminalPosition tpos = new TerminalPosition(col + (_Rand.nextInt(2) - 1), i);
             addObject(new Water(tpos, Water.WaterType.DEEP));
-
+            
             TerminalPosition tpos_shore1 = new TerminalPosition(tpos.getColumn() - 1, i);
             addObject(new Water(tpos_shore1, Water.WaterType.SHORE));
 
@@ -42,7 +44,8 @@ public class LayerRiver extends MapLayer {
 
             TerminalPosition tpos_nearshore2 = new TerminalPosition(tpos.getColumn() + 2, i);
             addObject(new Water(tpos_nearshore2, Water.WaterType.NEAR_SHORE));
+            
         }
     }
-
+    
 }

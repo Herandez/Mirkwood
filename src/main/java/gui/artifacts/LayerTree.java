@@ -10,8 +10,7 @@ import com.googlecode.lanterna.TextColor.RGB;
 import static gui.Map.COLUMNS;
 import static gui.Map.LINES;
 import static gui.Map.TREECOUNT;
-import gui.SymbolsMirk;
-import static gui.artifacts.Tree.factoryRandomTree;
+
 
 
 /**
@@ -28,10 +27,9 @@ public class LayerTree extends MapLayer{
     
     	public void generateTrees() {
             for (int i=0; i < TREECOUNT; i++){
-		TerminalPosition tpos = new TerminalPosition(_Rand.nextInt(COLUMNS),_Rand.nextInt(LINES));
+		addObject(new Tree());
                 
-                        //objectos[_Rand.nextInt(COLUMNS)][_Rand.nextInt(LINES)] = new Tree();
-                        //Tree.factoryRandomTree(COLUMNS, LINES)
+                      
 	}
 }
 }
