@@ -22,8 +22,8 @@ public class Tree extends MapObject{
 	
         Random mRand = new Random();
 	
-	public Tree() {
-		super(null, true, true);
+	public Tree(TerminalPosition pos) {
+		super(pos, true, true);
 		this.mTree = mTree;
 		this.mPosition = mPosition;
 		this.color = color;
@@ -31,7 +31,7 @@ public class Tree extends MapObject{
              
              setSymbol(SymbolsMirk.TREES[mRand.nextInt(SymbolsMirk.TREES.length)]);
              TerminalPosition tpos = new TerminalPosition(mRand.nextInt(COLUMNS),mRand.nextInt(LINES));
-             setPosition(tpos);
+             //setPosition(tpos);
              
              setBackgroundColor(new TextColor.RGB(165, 127, 61));
              setForegroundColor(treeColors[mRand.nextInt(treeColors.length)]);

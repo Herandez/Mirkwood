@@ -18,16 +18,12 @@ import java.util.Random;
  */
 public class Gold extends MapObject{
     
-    public Gold() {
-        super(null, true, true);
+    public Gold(TerminalPosition pos) {
+        super(pos, true, false); //O gold está invisivel com o parametro isVisible em false
         
-        Random _rand = new Random();
+        //Random _rand = new Random();
         
         setSymbol(SymbolsMirk.GOLD);
-        
-        TerminalPosition tpos = new TerminalPosition(_rand.nextInt(COLUMNS),_rand.nextInt(LINES));
-        setPosition(tpos);
-        
         setBackgroundColor(new TextColor.RGB(165, 127, 61));
         setForegroundColor(new TextColor.RGB(250, 250, 0));
     }

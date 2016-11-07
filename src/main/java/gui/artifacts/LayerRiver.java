@@ -24,7 +24,7 @@ public class LayerRiver extends MapLayer {
     
     public LayerRiver() {
         generateRiver();
-       
+        generateBridge();
     }
 
     public void generateRiver() {
@@ -47,5 +47,8 @@ public class LayerRiver extends MapLayer {
             
         }
     }
-    
+    public void generateBridge(){
+        TerminalPosition tposb = new TerminalPosition(col, 1);
+        addObject(new Bridge(tposb));
+    }
 }

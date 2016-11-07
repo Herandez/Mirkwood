@@ -99,7 +99,7 @@ public class Map extends Panel {
                                                 for (int i = 0; i < COLUMNS; i++) {
                                                     for (int j = 0; j < LINES; j++) {
                                                         MapObject mo = ml.getMaplayer()[i][j];
-                                                        if (mo != null) {
+                                                        if (mo != null && mo.isVisible()) {
                                                             graphics.setForegroundColor(mo.getForegroundColor());
                                                             graphics.setBackgroundColor(mo.getBackgroundColor());
                                                             graphics.putString(mo.getPosition(), String.valueOf(mo.getSymbol()));

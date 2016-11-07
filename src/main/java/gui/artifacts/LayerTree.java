@@ -10,6 +10,7 @@ import com.googlecode.lanterna.TextColor.RGB;
 import static gui.Map.COLUMNS;
 import static gui.Map.LINES;
 import static gui.Map.TREECOUNT;
+import java.util.Random;
 
 
 
@@ -19,6 +20,7 @@ import static gui.Map.TREECOUNT;
  */
 public class LayerTree extends MapLayer{
     
+    Random _rand = new Random();
     public LayerTree() {
         super();
         
@@ -27,7 +29,8 @@ public class LayerTree extends MapLayer{
     
     	public void generateTrees() {
             for (int i=0; i < TREECOUNT; i++){
-		addObject(new Tree());
+                TerminalPosition tpos = new TerminalPosition(_rand.nextInt(COLUMNS),_rand.nextInt(LINES));
+		addObject(new Tree(tpos));
                 
                       
 	}

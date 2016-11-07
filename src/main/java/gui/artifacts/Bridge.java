@@ -15,12 +15,14 @@ import gui.SymbolsMirk;
  */
 public class Bridge extends MapObject {
     
-    public Bridge(TerminalPosition position) {
-        super(null, true, true);
+    public Bridge(TerminalPosition pos) {
+        super(pos, true, true);
         
         setSymbol(SymbolsMirk.BRIDGE);
         setForegroundColor(new TextColor.RGB(160,82,45));
         setBackgroundColor(new TextColor.RGB(139, 69, 19));
+        
+        
     }
     
     /* A Ponte têm de ter a sua propria layer, deve ser gerada depois da agua, e de alguma forma têm de ir buscar a posição 
