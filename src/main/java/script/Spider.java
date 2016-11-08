@@ -16,8 +16,8 @@ import java.util.Random;
 public class Spider extends Character {    
     private final char FRONHA = '#';
     
-    public Spider() {        
-        super(0, 0, 0, 0,'?');
+    public Spider(TerminalPosition pos) {        
+        super(pos,0, 0, 0, 0,'?');
         Random _rand = new Random();
         
         setHp(_rand.nextInt(60) + 40);
@@ -27,13 +27,14 @@ public class Spider extends Character {
         
         setBackgroundColor(new TextColor.RGB(0,0,0));
         setForegroundColor(new TextColor.RGB(255, 255, 0));
-        
+        /*
         TerminalPosition tpos = new TerminalPosition(_rand.nextInt(COLUMNS),_rand.nextInt(LINES));
         setPosition(tpos);
+        */
     }
     
     public Spider(int hp, int attack, int defense) {
-        super(hp, 0, attack, defense,'?');
+        super(null,hp, 0, attack, defense,'?');
         
         setSymbol(FRONHA);
         

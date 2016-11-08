@@ -21,8 +21,8 @@ public abstract class Character extends MapObject {
     
     char symbol;
   
-    public Character(int hp, int power, int attack, int defense, char symbol) {
-        super(null, true, true, '?', TextColor.ANSI.BLACK, TextColor.ANSI.BLACK);
+    public Character(TerminalPosition pos, int hp, int power, int attack, int defense, char symbol) {
+        super(pos, true, true, '?', TextColor.ANSI.BLACK, TextColor.ANSI.BLACK);
         this.hp = hp;
         this.power = power;
         this.attack = attack;

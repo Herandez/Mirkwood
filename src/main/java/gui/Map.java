@@ -16,6 +16,7 @@ import com.googlecode.lanterna.gui2.TextGUIGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import gui.artifacts.LayerFoes;
 import gui.artifacts.LayerGold;
+import gui.artifacts.LayerPotion;
 import gui.artifacts.LayerRiver;
 import gui.artifacts.LayerTree;
 import gui.artifacts.MapLayer;
@@ -59,7 +60,7 @@ public class Map extends Panel {
                 _layers.add(new LayerRiver());
                 _layers.add(new LayerFoes());
                 _layers.add(new LayerGold());
-                
+                _layers.add(new LayerPotion());
 		_chars = chars;
 		getBasePane();
 		
@@ -186,6 +187,16 @@ public class Map extends Panel {
     }
         
         private boolean isPositionAvailable(TerminalPosition pos) {
+            
+            /*
+            Limites do mapa
+            */
+            if(pos.getColumn()<0 || pos.getColumn()>COLUMNS-1){
+                return false;
+            }
+            else if (pos.getRow()<0 || pos.getRow()>LINES-1){
+                return false;
+            }
             
             for (MapLayer ml : _layers) {
                 for (int i = 0; i < COLUMNS; i++) {

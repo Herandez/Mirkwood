@@ -16,8 +16,8 @@ import java.util.Random;
 public class Orc extends Character {    
     private final char FRONHA = '8';
     
-    public Orc() {        
-        super(0, 0, 0, 0,'?');
+    public Orc(TerminalPosition pos) {        
+        super(pos,0, 0, 0, 0,'?');
         Random _rand = new Random();
         
         setHp(_rand.nextInt(50) + 50);
@@ -27,14 +27,14 @@ public class Orc extends Character {
         
         setBackgroundColor(new TextColor.RGB(0,0,0));
         setForegroundColor(new TextColor.RGB(200,30,30));
-        
-        TerminalPosition tpos = new TerminalPosition(_rand.nextInt(COLUMNS),_rand.nextInt(LINES));
+        /*
+        TerminalPosition tpos = new TerminalPosition(4,_rand.nextInt(LINES));
         setPosition(tpos);
-        
+        */
     }
     
     public Orc(int hp, int attack, int defense) {
-        super(hp, 0, attack, defense,'?');
+        super(null,hp, 0, attack, defense,'?');
         
         setSymbol(FRONHA);
         
